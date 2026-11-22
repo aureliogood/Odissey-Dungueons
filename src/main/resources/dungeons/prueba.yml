@@ -1,0 +1,234 @@
+﻿# ============================================================== #
+#              ODISSEY DUNGUEONS - DUNGEON: PRUEBA                 #
+#   Configuración de ejemplo funcional para la mazmorra Prueba  #
+# ============================================================== #
+
+display-name: "&b&lMazmorra de Prueba"
+description:
+  - "&7Una mazmorra de prueba diseñada"
+  - "&7para verificar que todo funciona."
+enabled: true
+cooldown-seconds: 1800
+duration-seconds: 600
+min-players: 1
+max-players: 4
+world: "world"
+cooldown-expire-timestamp: 0
+
+# --- Puntos de aparición ---
+spawns:
+  # player: "PLAYER;world;0;80;0;0;0"
+  # lobby: "LOBBY;world;0;80;0;0;0"
+  # boss: "BOSS;world;10;80;10;0;0"
+  mobs: {}
+
+# --- Mobs normales configurados ---
+mobs:
+  zombie_basico:
+    mob-type: "VANILLA"
+    entity-type: "ZOMBIE"
+    mythic-id: ""
+    amount: 3
+    health: 20.0
+    damage: 3.0
+    speed: 0.25
+    custom-name: "&cZombie del Calabozo"
+    chance: 100.0
+    wave: 1
+    spawn-id: ""
+
+  esqueleto_basico:
+    mob-type: "VANILLA"
+    entity-type: "SKELETON"
+    mythic-id: ""
+    amount: 2
+    health: 20.0
+    damage: 4.0
+    speed: 0.25
+    custom-name: "&7Esqueleto Guardián"
+    chance: 100.0
+    wave: 1
+    spawn-id: ""
+
+  arana_toxica:
+    mob-type: "VANILLA"
+    entity-type: "CAVE_SPIDER"
+    mythic-id: ""
+    amount: 2
+    health: 15.0
+    damage: 2.0
+    speed: 0.30
+    custom-name: "&2Araña Venenosa"
+    chance: 80.0
+    wave: 2
+    spawn-id: ""
+
+  creeper_dungeon:
+    mob-type: "VANILLA"
+    entity-type: "CREEPER"
+    mythic-id: ""
+    amount: 2
+    health: 20.0
+    damage: 6.0
+    speed: 0.25
+    custom-name: "&aCrujidor de la Oscuridad"
+    chance: 70.0
+    wave: 2
+    spawn-id: ""
+
+# --- Boss Final ---
+boss:
+  name: "&c&lGuardián Oscuro"
+  mob-type: "VANILLA"
+  entity-type: "WITHER_SKELETON"
+  mythic-id: ""
+  health: 150.0
+  damage: 8.0
+  model-id: ""
+  spawn-message: "&4&l¡El &c&lGuardián Oscuro &4&lha despertado de su letargo!"
+  death-message: "&a&l¡El &c&lGuardián Oscuro &a&lha sido derrotado por los héroes!"
+  rewards:
+    boss_gold:
+      type: "VAULT_MONEY"
+      value: "500"
+      amount: 1
+      chance: 100.0
+      display-name: "&6500 Monedas de Oro"
+      material: "GOLD_INGOT"
+      lore:
+        - "&7Recompensa del jefe final"
+
+# --- Sistema de Oleadas ---
+waves:
+  1:
+    delay-seconds: 3
+    announcement: "&6&lOLEADA &e&l1 &8- &7¡Los no-muertos se acercan!"
+    mobs:
+      zombie_w1:
+        mob-type: "VANILLA"
+        entity-type: "ZOMBIE"
+        mythic-id: ""
+        amount: 5
+        health: 20.0
+        damage: 3.0
+        speed: 0.23
+        custom-name: "&cZombie"
+        chance: 100.0
+        spawn-id: ""
+      skeleton_w1:
+        mob-type: "VANILLA"
+        entity-type: "SKELETON"
+        mythic-id: ""
+        amount: 3
+        health: 20.0
+        damage: 4.0
+        speed: 0.25
+        custom-name: "&7Esqueleto"
+        chance: 100.0
+        spawn-id: ""
+  2:
+    delay-seconds: 5
+    announcement: "&6&lOLEADA &e&l2 &8- &7¡Criaturas de las sombras!"
+    mobs:
+      spider_w2:
+        mob-type: "VANILLA"
+        entity-type: "SPIDER"
+        mythic-id: ""
+        amount: 5
+        health: 18.0
+        damage: 2.5
+        speed: 0.30
+        custom-name: "&8Araña Oscura"
+        chance: 100.0
+        spawn-id: ""
+      creeper_w2:
+        mob-type: "VANILLA"
+        entity-type: "CREEPER"
+        mythic-id: ""
+        amount: 4
+        health: 20.0
+        damage: 6.0
+        speed: 0.25
+        custom-name: "&aCrujidor"
+        chance: 90.0
+        spawn-id: ""
+  3:
+    delay-seconds: 8
+    announcement: "&6&lOLEADA &c&lFINAL &8- &7¡El jefe se aproxima!"
+    mobs:
+      zombie_elite_w3:
+        mob-type: "VANILLA"
+        entity-type: "ZOMBIE"
+        mythic-id: ""
+        amount: 3
+        health: 40.0
+        damage: 6.0
+        speed: 0.28
+        custom-name: "&4Zombie Élite"
+        chance: 100.0
+        spawn-id: ""
+
+# --- Recompensas Globales ---
+rewards:
+  gold_reward:
+    type: "VAULT_MONEY"
+    value: "250"
+    amount: 1
+    chance: 100.0
+    display-name: "&6250 Monedas"
+    material: "GOLD_NUGGET"
+    lore:
+      - "&7Recompensa estándar"
+  xp_reward:
+    type: "EXPERIENCE"
+    value: "100"
+    amount: 1
+    chance: 100.0
+    display-name: "&a100 XP"
+    material: "EXPERIENCE_BOTTLE"
+    lore:
+      - "&7Experiencia de mazmorra"
+  rare_key:
+    type: "COMMAND"
+    value: "crate givekey %player% dungeon_key 1"
+    amount: 1
+    chance: 15.0
+    display-name: "&d&lLlave de Mazmorra"
+    material: "TRIPWIRE_HOOK"
+    lore:
+      - "&7Una rara llave obtenida"
+      - "&7tras completar la mazmorra."
+      - "&8Probabilidad: &d15%"
+
+# --- Recompensas por Dificultad ---
+difficulty-rewards:
+  dificil:
+    gold_hard:
+      type: "VAULT_MONEY"
+      value: "500"
+      amount: 1
+      chance: 100.0
+      display-name: "&6500 Monedas de Oro"
+      material: "GOLD_INGOT"
+      lore:
+        - "&7Recompensa dificultad difícil"
+  pesadilla:
+    gold_nightmare:
+      type: "VAULT_MONEY"
+      value: "1000"
+      amount: 1
+      chance: 100.0
+      display-name: "&61000 Monedas de Oro"
+      material: "GOLD_BLOCK"
+      lore:
+        - "&7Recompensa dificultad pesadilla"
+    legendary_item:
+      type: "COMMAND"
+      value: "give %player% diamond_sword{display:{Name:'\"&c&lEspada Maldita\"'}} 1"
+      amount: 1
+      chance: 5.0
+      display-name: "&c&lEspada Maldita"
+      material: "DIAMOND_SWORD"
+      lore:
+        - "&7Objeto legendario"
+        - "&8Probabilidad: &c5%"

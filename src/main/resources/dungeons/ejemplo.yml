@@ -1,0 +1,171 @@
+﻿# ============================================================== #
+#              ODISSEY DUNGUEONS - DUNGEON: EJEMPLO                #
+#     Ejemplo avanzado con MythicMobs y salas configuradas      #
+# ============================================================== #
+
+display-name: "&e&lCripta del Olvido"
+description:
+  - "&7Una antigua cripta sellada por siglos."
+  - "&7Solo los más valientes sobrevivirán."
+  - "&cDificultad recomendada: 2-4 jugadores"
+enabled: true
+cooldown-seconds: 3600
+duration-seconds: 900
+min-players: 2
+max-players: 4
+world: "world"
+cooldown-expire-timestamp: 0
+
+spawns:
+  mobs: {}
+
+mobs:
+  undead_warrior:
+    mob-type: "VANILLA"
+    entity-type: "ZOMBIE"
+    mythic-id: ""
+    amount: 4
+    health: 30.0
+    damage: 5.0
+    speed: 0.26
+    custom-name: "&cGuerrero No-Muerto"
+    chance: 100.0
+    wave: 1
+    spawn-id: ""
+
+  phantom_archer:
+    mob-type: "VANILLA"
+    entity-type: "SKELETON"
+    mythic-id: ""
+    amount: 3
+    health: 25.0
+    damage: 6.0
+    speed: 0.24
+    custom-name: "&bArquero Fantasma"
+    chance: 100.0
+    wave: 1
+    spawn-id: ""
+
+  # Ejemplo MythicMobs (solo se activa si MythicMobs está instalado)
+  mythic_golem:
+    mob-type: "MYTHICMOBS"
+    entity-type: "IRON_GOLEM"
+    mythic-id: "Dungeon_Golem"
+    amount: 1
+    health: 80.0
+    damage: 10.0
+    speed: 0.20
+    custom-name: "&6&lGólem de la Cripta"
+    chance: 100.0
+    wave: 2
+    spawn-id: ""
+
+boss:
+  name: "&4&lLich Rey Ancestral"
+  mob-type: "VANILLA"
+  entity-type: "WITHER_SKELETON"
+  mythic-id: "Lich_King"
+  health: 300.0
+  damage: 12.0
+  model-id: ""
+  spawn-message: "&4&l¡EL &c&lLICH REY ANCESTRAL &4&lHA REGRESADO!"
+  death-message: "&a&l¡Los héroes han destruido al &e&lLich Rey&a&l! ¡La cripta ha sido purificada!"
+  rewards:
+    boss_loot:
+      type: "VAULT_MONEY"
+      value: "1500"
+      amount: 1
+      chance: 100.0
+      display-name: "&61500 Monedas"
+      material: "GOLD_BLOCK"
+      lore:
+        - "&7Tesoro del Lich Rey"
+
+waves:
+  1:
+    delay-seconds: 5
+    announcement: "&6&lOLEADA &e&l1 &8- &7Los guardianes de la cripta despiertan..."
+    mobs:
+      undead_w1:
+        mob-type: "VANILLA"
+        entity-type: "ZOMBIE"
+        mythic-id: ""
+        amount: 6
+        health: 25.0
+        damage: 4.0
+        speed: 0.24
+        custom-name: "&cGuerrero No-Muerto"
+        chance: 100.0
+        spawn-id: ""
+      archer_w1:
+        mob-type: "VANILLA"
+        entity-type: "SKELETON"
+        mythic-id: ""
+        amount: 4
+        health: 22.0
+        damage: 5.0
+        speed: 0.25
+        custom-name: "&7Arquero Espectral"
+        chance: 100.0
+        spawn-id: ""
+  2:
+    delay-seconds: 7
+    announcement: "&6&lOLEADA &e&l2 &8- &7¡Los mini-jefes emergen de las sombras!"
+    mobs:
+      spider_elite_w2:
+        mob-type: "VANILLA"
+        entity-type: "CAVE_SPIDER"
+        mythic-id: ""
+        amount: 6
+        health: 20.0
+        damage: 3.0
+        speed: 0.32
+        custom-name: "&2Araña del Abismo"
+        chance: 100.0
+        spawn-id: ""
+      creeper_w2:
+        mob-type: "VANILLA"
+        entity-type: "CREEPER"
+        mythic-id: ""
+        amount: 3
+        health: 20.0
+        damage: 7.0
+        speed: 0.25
+        custom-name: "&aTerror Silente"
+        chance: 100.0
+        spawn-id: ""
+  3:
+    delay-seconds: 10
+    announcement: "&c&lOLEADA FINAL &8- &7¡El Lich Rey despierta!"
+    mobs:
+      elite_guard_w3:
+        mob-type: "VANILLA"
+        entity-type: "ZOMBIE"
+        mythic-id: ""
+        amount: 4
+        health: 50.0
+        damage: 7.0
+        speed: 0.26
+        custom-name: "&4Guardia Real No-Muerto"
+        chance: 100.0
+        spawn-id: ""
+
+rewards:
+  gold_reward:
+    type: "VAULT_MONEY"
+    value: "500"
+    amount: 1
+    chance: 100.0
+    display-name: "&6500 Monedas"
+    material: "GOLD_INGOT"
+    lore:
+      - "&7Tesoro de la cripta"
+  xp_reward:
+    type: "EXPERIENCE"
+    value: "200"
+    amount: 1
+    chance: 100.0
+    display-name: "&a200 XP"
+    material: "EXPERIENCE_BOTTLE"
+    lore:
+      - "&7Experiencia ancestral"

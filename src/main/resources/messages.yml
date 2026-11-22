@@ -1,0 +1,76 @@
+# ============================================================== #
+#                  ODISSEY DUNGUEONS - MENSAJES                  #
+#           Todos los mensajes del chat son editables aquí       #
+# ============================================================== #
+
+prefix: "&b&lODISSEY DUNGUEONS &8»"
+
+# Permisos y errores generales
+no-permission: "%prefix% &cNo tienes permisos para realizar esta acción."
+player-only: "%prefix% &cEste comando solo puede ser ejecutado por un jugador."
+dungeon-not-found: "%prefix% &cLa mazmorra &e%dungeon% &cno existe."
+dungeon-already-inside: "%prefix% &cYa estás dentro de una dungeon activa."
+dungeon-disabled: "%prefix% &cEsta mazmorra se encuentra desactivada actualmente."
+dungeon-cooldown: "%prefix% &cEsta dungeon estará disponible en &f%time%&c."
+
+# Requisitos para iniciar mazmorra
+dungeon-no-world: "%prefix% &cError: La mazmorra &f%dungeon% &cno tiene un mundo asignado."
+dungeon-no-world-help: "%prefix% &eDebes asignarle un mundo en el menú (&f/dungeons gui&e) o usar &f/dungeons setspawn&e."
+dungeon-no-spawn: "%prefix% &cError: La mazmorra &f%dungeon% &cno tiene punto de spawn de jugadores."
+dungeon-no-spawn-help: "%prefix% &ePárate en el lugar deseado del mapa y usa: &f/dungeons setspawn %dungeon%"
+dungeon-world-missing: "%prefix% &cError: El mundo &e%world% &cno está cargado o no existe."
+
+# Creación y administración de mazmorras
+dungeon-created: "%prefix% &a¡Mazmorra &f%dungeon% &acreada con éxito!"
+dungeon-created-pending: "%prefix% &eUsa &b/dungeons setspawn %dungeon% &eo abre &b/dungeons gui &epara configurarla."
+dungeon-deleted: "%prefix% &cLa dungeon &f%dungeon% &cha sido eliminada."
+dungeon-reloaded: "%prefix% &a&l¡OdisseyDungueons recargado correctamente!"
+dungeon-spawn-set: "%prefix% &a¡Punto de spawn establecido para &f%dungeon%&a! &7(Mundo: &e%world%&7)"
+dungeon-teleported: "%prefix% &aTeletransportado a la mazmorra &f%dungeon% &7(Mundo: &e%world%&7)."
+
+# Unirse y salir
+dungeon-joined: "%prefix% &aTe has unido a la mazmorra &f%dungeon%&a."
+dungeon-left: "%prefix% &eHas salido de la mazmorra."
+dungeon-started: "%prefix% &aLa mazmorra &f%dungeon% &aha comenzado."
+dungeon-stopped: "%prefix% &cLa mazmorra &f%dungeon% &cha sido detenida."
+dungeon-not-running: "%prefix% &cNo hay instancias activas de &f%dungeon%&c."
+
+# Anuncios globales de cooldown
+dungeon-cooldown-announcement: "%prefix% &e¡La mazmorra &b%dungeon% &eestará disponible en &f%time%&e!"
+dungeon-available-announcement: "%prefix% &a&l¡La mazmorra &b%dungeon% &a&lya está disponible para jugar!"
+
+# Spawners de Mobs y Boss
+spawner-mob-received: "%prefix% &aHas recibido el Spawner de Mobs para: &f%dungeon%"
+spawner-boss-received: "%prefix% &cHas recibido el Spawner de Jefe Final para: &f%dungeon%"
+spawner-mob-placed: "%prefix% &a¡Spawner de Mobs colocado y registrado en la mazmorra &f%dungeon%&a!"
+spawner-boss-placed: "%prefix% &c¡Spawner de Jefe Final colocado y registrado en la mazmorra &f%dungeon%&c!"
+spawner-removed: "%prefix% &cSpawner eliminado de la mazmorra &f%dungeon%&c."
+spawner-remove-help: "%prefix% &ePara retirar este spawner, mantén &c&lShift (Agacharse) &eal romperlo."
+spawner-cant-break: "%prefix% &cNo puedes romper los spawners durante una partida de mazmorra."
+
+# Cofre de Recompensas
+reward-chest-received: "%prefix% &6Has recibido el Cofre de Recompensas para: &f%dungeon%"
+reward-chest-placed: "%prefix% &a¡Cofre de Recompensas colocado con éxito para &f%dungeon%&a!"
+reward-chest-removed: "%prefix% &cCofre de Recompensas eliminado de la mazmorra &f%dungeon%&c."
+reward-chest-remove-help: "%prefix% &ePara retirar el cofre de recompensas, mantén &c&lShift (Agacharse) &eal romperlo."
+reward-chest-cant-break: "%prefix% &cNo puedes romper el cofre de recompensas durante la mazmorra."
+reward-chest-locked: "%prefix% &c¡El cofre está bloqueado! Debes superar todas las oleadas de la mazmorra para abrirlo."
+reward-chest-unlocked-broadcast: "%prefix% &a&l★ ¡EL COFRE DE RECOMPENSAS HA SIDO DESBLOQUEADO! ★ &e¡Reclama tu botín!"
+reward-chest-claimed: "%prefix% &a&l¡Has abierto el cofre y recibido tus recompensas!"
+reward-chest-already-claimed: "%prefix% &eYa has reclamado tu recompensa de este cofre en esta partida."
+
+# Oleadas y progreso en mazmorra
+wave-announcement: "&6&l[OLEADA %wave%] &e¡Los enemigos se aproximan!"
+wave-cleared: "%prefix% &a&l¡Oleada completada! &7Siguiente oleada en &f%delay% &7segundos..."
+normal-spawners-cleared: "%prefix% &6&l¡Todas las salas han sido despejadas! &c&l¡Avanza al Spawner de Jefe Final!"
+
+# Horda Final (Boss Spawner con 10 oleadas)
+boss-wave-announcement: "&4&l[HORDA FINAL - OLEADA %wave%/10] &c¡Prepárate para combatir!"
+boss-wave-cleared: "%prefix% &e¡Oleada &f%wave%/10 &ede la Horda Final superada! &7Siguiente en &f%delay%s&7..."
+boss-horde-defeated: "%prefix% &6&l¡La Horda Final ha sido erradicada por completo!"
+
+# Títulos de pantalla
+dungeon-victory-title: "&a&l¡MAZMORRA COMPLETADA!"
+dungeon-victory-subtitle: "&f¡Han triunfado sobre la oscuridad!"
+dungeon-defeat-title: "&c&l¡MAZMORRA FALLIDA!"
+dungeon-defeat-subtitle: "&7El tiempo o los enemigos los han vencido"

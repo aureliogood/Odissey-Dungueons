@@ -1,0 +1,128 @@
+# ============================================================== #
+#                   ODISSEY DUNGUEONS - CONFIG                   #
+#                   Desarrollado para OdisseyMC                  #
+# ============================================================== #
+
+settings:
+  # Idioma predeterminado
+  language: "es"
+
+  # Limpieza de instancias huérfanas al arrancar el servidor
+  cleanup-orphaned-instances-on-start: true
+
+  # Intervalo de chequeo de cooldowns y avisos globales (en segundos)
+  cooldown-check-interval-seconds: 5
+
+  # Permite a los jugadores volver a conectar a una dungeon si se desconectan
+  reconnect-timeout-seconds: 60
+
+  # Protección ambiental en instancias
+  prevent-block-damage-creeper: true
+  prevent-all-mob-drops: true
+  prevent-mob-exp-drops: true
+
+instances:
+  # Tiempo de gracia tras completar una dungeon antes del teletransporte al lobby (segundos)
+  victory-teleport-delay: 20
+  # Tiempo de gracia tras fallar la dungeon antes del teletransporte al lobby (segundos)
+  defeat-teleport-delay: 5
+
+# ============================================================== #
+#           CONFIGURACIÓN DE SPAWNERS Y OLEADAS                  #
+# ============================================================== #
+spawners:
+  # Distancia máxima (en bloques) a la que un jugador debe acercarse
+  # para que el spawner despierte e invoque a sus mobs.
+  # Si hay 2 spawners muy juntos, ambos detectan al jugador y se acumulan.
+  activation-radius: 14.0
+
+  # Pausa entre oleadas de un mismo spawner (segundos)
+  wave-delay-seconds: 3
+
+  # Altura del holograma sobre el bloque del spawner (en bloques)
+  hologram-height: 1.35
+
+  mob-spawner:
+    item-name: "&b&lSPAWNER DE MOBS (3 OLEADAS) &8[&e%dungeon%&8]"
+    item-lore:
+      - "&7Herramienta administrativa para crear spawns."
+      - "&7Coloca este bloque en la sala de tu mazmorra."
+      - "&7Genera 3 oleadas sucesivas por cada spawner."
+      - ""
+      - "&eActivación: &fInvocará mobs cuando un jugador"
+      - "&festé a menos de &b%radius% bloques&f."
+      - "&cShift + Romper bloque: &7Eliminar este spawner"
+      - "&7Dungeon: &b%dungeon%"
+    # Holograma que se muestra durante una partida de mazmorra
+    hologram-active:
+      - "&b&l⚔ MAZMORRA: &e%dungeon% &b&l⚔"
+      - "&7Oleada de Sala: &a%spawner_wave%/3"
+      - "&7Enemigos restantes: &c%remaining_mobs%"
+      - "&7Estado: %status%"
+    # Holograma que se muestra en el mapa mientras diseñas/creas la mazmorra
+    hologram-editor:
+      - "&b&l⚔ SPAWNER DE MOBS (3 OLEADAS) ⚔"
+      - "&7Mazmorra: &e%dungeon%"
+      - "&7ID: &f%spawner_id%"
+      - "&a✔ Spawner registrado y listo"
+
+  boss-spawner:
+    item-name: "&c&lSPAWNER DE JEFE FINAL (10 OLEADAS) &8[&e%dungeon%&8]"
+    item-lore:
+      - "&7Herramienta administrativa para la Horda Final."
+      - "&7Coloca este bloque en la sala final de la mazmorra."
+      - "&7Desatará 10 oleadas épicas de hordas de enemigos."
+      - ""
+      - "&eActivación: &fLa Horda &cNO aparecerá &fhasta que los"
+      - "&fjugadores se acerquen a menos de &b%radius% bloques&f."
+      - "&cShift + Romper bloque: &7Eliminar este spawner"
+      - "&7Dungeon: &b%dungeon%"
+    # Holograma que se muestra durante una partida de mazmorra
+    hologram-active:
+      - "&c&l☠ HORDA FINAL ☠"
+      - "&7Mazmorra: &e%dungeon%"
+      - "&7Oleada de Jefe: &c%boss_wave%/10"
+      - "&7Enemigos vivos: &f%remaining_mobs%"
+      - "&7Estado: %status%"
+    # Holograma que se muestra en el mapa mientras diseñas/creas la mazmorra
+    hologram-editor:
+      - "&c&l☠ SPAWNER DE JEFE FINAL (10 OLEADAS) ☠"
+      - "&7Mazmorra: &e%dungeon%"
+      - "&a✔ Spawner registrado y listo"
+
+  # Textos personalizables de la variable %status%
+  status:
+    idle: "&8[En espera]"
+    waiting_players: "&e&l[¡ACÉRCATE PARA INVOCAR!]"
+    active: "&a&l[¡EN COMBATE!]"
+    cleared: "&2✔ Sala completada"
+    boss_waiting_waves: "&8[Limpia las salas previas]"
+    boss_ready: "&c&l[¡ACÉRCATE PARA INICIAR LA HORDA!]"
+    boss_fighting: "&4&l[¡COMBATE INTENSO!]"
+    boss_defeated: "&6&l[★ HORDA DERROTADA - MAZMORRA SUPERADA ★]"
+
+# ============================================================== #
+#           CONFIGURACIÓN DEL COFRE DE RECOMPENSAS               #
+# ============================================================== #
+reward-chest:
+  item-name: "&6&lCOFRE DE RECOMPENSAS &8[&e%dungeon%&8]"
+  item-lore:
+    - "&7Coloca este cofre en la sala final de la mazmorra."
+    - "&7Estará protegido y bloqueado durante el combate."
+    - "&7Se desbloqueará al superar las 10 oleadas de la Horda."
+    - ""
+    - "&cShift + Romper bloque: &7Eliminar este cofre"
+    - "&7Dungeon: &b%dungeon%"
+  hologram-locked:
+    - "&6&l★ COFRE DE RECOMPENSAS ★"
+    - "&7Mazmorra: &e%dungeon%"
+    - "&c&l[BLOQUEADO]"
+    - "&7Supera las 10 oleadas para abrirlo"
+  hologram-unlocked:
+    - "&6&l★ COFRE DE RECOMPENSAS ★"
+    - "&a&l[¡DESBLOQUEADO!]"
+    - "&e¡Haz clic derecho para reclamar tu botín!"
+  hologram-editor:
+    - "&6&l★ COFRE DE RECOMPENSAS ★"
+    - "&7Mazmorra: &e%dungeon%"
+    - "&a✔ Ubicación establecida"

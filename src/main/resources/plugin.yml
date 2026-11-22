@@ -1,0 +1,35 @@
+name: OdisseyDungueons
+version: '1.0.0-RELEASE'
+main: com.odisseymc.odisseydungueons.OdisseyDungueons
+api-version: '1.20'
+author: OdisseyMC
+description: Sistema profesional de Mazmorras e Instancias para servidores de alto rendimiento.
+website: https://odisseymc.com
+
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - MythicMobs
+  - WorldGuard
+  - WorldEdit
+  - ModelEngine
+  - BetterModel
+  - ItemsAdder
+  - Nexo
+  - ExecutableItems
+  - SlimeWorldManager
+  - AdvancedSlimePaper
+
+commands:
+  dungeons:
+    description: Comando principal de OdisseyDungueons
+    aliases: [dungeon, dungueon, dungueons, odungeons, odisseydungueons, mazmorras]
+    usage: /<command> [gui|join|leave|info|create|delete|setspawn|tp|start|stop|test|reload]
+
+permissions:
+  odisseydungueons.admin:
+    description: Permiso administrativo total para crear, editar, testear y gestionar dungeons.
+    default: op
+  odisseydungueons.player:
+    description: Permiso para ver el menú de dungeons, consultar info, unirse y salir.
+    default: true

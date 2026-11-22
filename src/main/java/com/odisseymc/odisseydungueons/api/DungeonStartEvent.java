@@ -1,0 +1,27 @@
+package com.odisseymc.odisseydungueons.api;
+
+import com.odisseymc.odisseydungueons.instance.DungeonInstance;
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
+
+public class DungeonStartEvent extends Event {
+    private static final HandlerList HANDLERS = new HandlerList();
+    private final DungeonInstance instance;
+
+    public DungeonStartEvent(DungeonInstance instance) {
+        this.instance = instance;
+    }
+
+    public DungeonInstance getInstance() {
+        return instance;
+    }
+
+    @Override
+    public HandlerList getHandlers() {
+        return HANDLERS;
+    }
+
+    public static HandlerList getHandlerList() {
+        return HANDLERS;
+    }
+}
